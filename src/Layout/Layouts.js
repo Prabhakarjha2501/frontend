@@ -48,40 +48,40 @@ const Layouts = () => {
   };
   return (
     <>
-    <Container maxWidth="lg" sx={{ marginTop: 4 }}>
-      <Typography variant="h4" align="center" gutterBottom>
-        Dashboard
-      </Typography>
+      <Container maxWidth="lg" sx={{ marginTop: 4 }}>
+        <Typography variant="h4" align="center" gutterBottom>
+          Dashboard
+        </Typography>
 
-      <Box sx={{ marginBottom: 4 }}>
-        <Suspense fallback={<CircularProgress />}>
-          <MonthDropdown selectedMonth={selectedMonth} onMonthChange={handleMonthChange} />
-        </Suspense>
-      </Box>
+        <Box sx={{ marginBottom: 4 }}>
+          <Suspense fallback={<CircularProgress />}>
+            <MonthDropdown selectedMonth={selectedMonth} onMonthChange={handleMonthChange} />
+          </Suspense>
+        </Box>
 
-      <Grid container spacing={4}>
-        
-        <Grid item xs={12} md={6}>
-        <Paper sx={{backgroundColor:"#e6f2ff",height:"400px"}}>
-          <Suspense fallback={<CircularProgress />}>
-        
-            <Statistics statistics={statistics} />
-        
-          </Suspense>
-          </Paper>
+        <Grid container spacing={4}>
+
+          <Grid item xs={12} md={6}>
+            <Paper sx={{ backgroundColor: "#e6f2ff", height: "400px" }}>
+              <Suspense fallback={<CircularProgress />}>
+
+                <Statistics statistics={statistics} />
+
+              </Suspense>
+            </Paper>
+          </Grid>
+          <Grid item xs={12} md={6}>
+            <Suspense fallback={<CircularProgress />}>
+              <BarChartComponent data={barChartData} />
+            </Suspense>
+          </Grid>
+          <Grid item xs={12}>
+            <Suspense fallback={<CircularProgress />}>
+              <TransactionTable />
+            </Suspense>
+          </Grid>
         </Grid>
-        <Grid item xs={12} md={6}>
-          <Suspense fallback={<CircularProgress />}>
-            <BarChartComponent data={barChartData} />
-          </Suspense>
-        </Grid>
-        <Grid item xs={12}>
-          <Suspense fallback={<CircularProgress />}>
-            <TransactionTable />
-          </Suspense>
-        </Grid>
-      </Grid>
-    </Container>
+      </Container>
     </>
   );
 }

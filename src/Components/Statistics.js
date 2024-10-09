@@ -6,38 +6,38 @@ const Statistics = ({ statistics }) => {
 
   return (
     <>
-    <Grid container spacing={2}>
-      <Grid item xs={12} sm={4}>
-        <Card elevation={3}>
-          <CardContent>
-            <Typography variant="h6" gutterBottom>
-              Total Sale Amount
-            </Typography>
-            <Typography variant="h4">${totalSaleAmount?.toFixed(2) || '0.00'}</Typography>
-          </CardContent>
-        </Card>
+      <Grid container spacing={2}>
+        <Grid item xs={12} sm={4}>
+          <Card elevation={3}>
+            <CardContent>
+              <Typography variant="h6" gutterBottom>
+                Total Sale Amount
+              </Typography>
+              <Typography variant="h4">${totalSaleAmount?.toFixed(2) || '0.00'}</Typography>
+            </CardContent>
+          </Card>
+        </Grid>
+        <Grid item xs={12} sm={4}>
+          <Card elevation={3}>
+            <CardContent>
+              <Typography variant="h6" gutterBottom>
+                Total Sold Items
+              </Typography>
+              <Typography variant="h4">{totalSoldItems || 0}</Typography>
+            </CardContent>
+          </Card>
+        </Grid>
+        <Grid item xs={12} sm={4}>
+          <Card elevation={3}>
+            <CardContent>
+              <Typography variant="h6" gutterBottom>
+                Total Not Sold Items
+              </Typography>
+              <Typography variant="h4">{totalNotSoldItems || 0}</Typography>
+            </CardContent>
+          </Card>
+        </Grid>
       </Grid>
-      <Grid item xs={12} sm={4}>
-        <Card elevation={3}>
-          <CardContent>
-            <Typography variant="h6" gutterBottom>
-              Total Sold Items
-            </Typography>
-            <Typography variant="h4">{totalSoldItems || 0}</Typography>
-          </CardContent>
-        </Card>
-      </Grid>
-      <Grid item xs={12} sm={4}>
-        <Card elevation={3}>
-          <CardContent>
-            <Typography variant="h6" gutterBottom>
-              Total Not Sold Items
-            </Typography>
-            <Typography variant="h4">{totalNotSoldItems || 0}</Typography>
-          </CardContent>
-        </Card>
-      </Grid>
-    </Grid>
     </>
   );
 };
