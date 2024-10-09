@@ -5,6 +5,7 @@ const Statistics = ({ statistics }) => {
   const { totalSaleAmount, totalSoldItems, totalNotSoldItems } = statistics;
 
   return (
+    <>
     <Grid container spacing={2}>
       <Grid item xs={12} sm={4}>
         <Card elevation={3}>
@@ -37,6 +38,7 @@ const Statistics = ({ statistics }) => {
         </Card>
       </Grid>
     </Grid>
+    </>
   );
 };
 

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Card, CardContent, Typography } from '@mui/material';
+import { Box, Card, CardContent, Paper, Typography } from '@mui/material';
 import {
   BarChart,
   Bar,
@@ -11,8 +11,9 @@ import {
 } from 'recharts';
 
 const BarChartComponent = ({ data }) => {
-  return (
-    <Card elevation={3} sx={{ height: '100%' }}>
+  return (   
+<>
+          <Card elevation={3} sx={{ height: '100%' }}>
       <CardContent>
         <Typography variant="h6" gutterBottom>
           Sales Distribution
@@ -28,6 +29,7 @@ const BarChartComponent = ({ data }) => {
         </ResponsiveContainer>
       </CardContent>
     </Card>
+</>
   );
 };
 

@@ -8,6 +8,4 @@ const axiosInstance = axios.create({
   },
 });
 
-// You can add interceptors here if needed
-
 export default axiosInstance;

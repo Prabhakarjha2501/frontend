@@ -4,6 +4,7 @@ import { MONTHS } from '../utils/constants';
 
 const MonthDropdown = ({ selectedMonth='Mar', onMonthChange }) => {
   return (
+    <>
     <FormControl fullWidth variant="outlined">
       <InputLabel id="month-select-label">Select Month</InputLabel>
       <Select
@@ -19,6 +20,7 @@ const MonthDropdown = ({ selectedMonth='Mar', onMonthChange }) => {
         ))}
       </Select>
     </FormControl>
+    </>
   );
 };
 
