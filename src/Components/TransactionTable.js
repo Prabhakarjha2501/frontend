@@ -11,12 +11,13 @@ import {
   Pagination,
   Box,
   Avatar,
+  PaginationItem,
 } from '@mui/material';
 import MonthDropdown from './MonthDropdown';
 import { fetchTransactions } from '../services/api';
 const TransactionTable = ({
 }) => {
-  const [selectedMonth, setSelectedMonth] = useState('Mar');
+  const [selectedMonth, setSelectedMonth] = useState('');
   const [transactions, setTransactions] = useState([]);
   const [transactionSearch, setTransactionSearch] = useState('');
   const [transactionPagination, setTransactionPagination] = useState({
@@ -121,6 +122,16 @@ const TransactionTable = ({
             page={transactionPagination.page}
             onChange={(e, page) => handlePageChange(page)}
             color="primary"
+            renderItem={(item) => (
+              <PaginationItem
+                {...item}
+                components={{
+                  previous: () => <span>Previous</span>,
+                  next: () => <span>Next</span>,
+                }}
+              />
+              
+            )}
           />
         </Box>
       </Paper>
